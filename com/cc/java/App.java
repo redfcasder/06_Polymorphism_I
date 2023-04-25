@@ -7,18 +7,46 @@ public class App {
         Queen queen = new Queen();
         Worker worker = new Worker();
         Drone drone = new Drone();
-
-        output(queen.doYourJob());
-        output(queen.fly());
-       
-        output(worker.doYourJob());
-        output(worker.fly());
         
-        output(drone.doYourJob());
-        output(drone.fly());
+        pollObj(queen);
+        pollObj(worker);
+        pollObj(drone);
+
+// Das sollte eigentlich nicht möglich sein !!!!
+        HoneyBee bee = new HoneyBee();
+        pollObj(bee);
+        
      
         
     }
+// 1. Variante . Overloading
+    // private static void pollObj(Queen obj) {
+
+    //     output((obj.doYourJob()));
+    //     output(obj.fly());
+    // }
+
+    // private static void pollObj(Worker obj){
+
+    //     output((obj.doYourJob()));
+    //     output(obj.fly());
+    // }
+
+    // private static void pollObj(Drone obj){
+
+    //     output((obj.doYourJob()));
+    //     output(obj.fly());
+    // }
+
+    // 2. Variante - Polymorphie
+
+    private static void pollObj(HoneyBee obj){
+
+        output(obj.doYourJob());
+        output(obj.fly());
+
+    }
+
 
    
    
